@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
-const colors = require("colors");
-
 const connectDB = async () => {
   //there is a bug to fix here
   try {
     const conn = await mongoose.connect(
-      "mongodb+srv://Book-library:PhaBfqeAMijRnp18@remicluster.kyndevf.mongodb.net/?retryWrites=true&w=majority"
-    )
+      "mongodb+srv://Book-library:e6yI4h87bD5jotbK@remicluster.kyndevf.mongodb.net/?retryWrites=true&w=majority"
+    );
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
   } catch (error) {
