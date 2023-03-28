@@ -3,10 +3,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const connectDB = async () => {
-  /*there is a bug to fix here, try adding 
-  another database uri to troubleshoot and 
-  ensure the .env serves the database uri to the moongose func */
 
+  {/*if (mongoose.connections[0]) {
+    return;
+  }*/}
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI);
 
@@ -16,5 +16,14 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+
+{
+  /*const handler = async (req, res) => {
+  await connectDB();
+  
+  if (req.method === "GET") {
+    getBooks(req, res);
+  }}*/
+}
 
 module.exports = connectDB;

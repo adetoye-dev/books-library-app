@@ -7,7 +7,6 @@ const colors = require("colors");
 const connectDB = require("./config/db");
 
 connectDB();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
