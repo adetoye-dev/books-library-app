@@ -5,12 +5,16 @@ const { errorHandler } = require("./middleware/middleware");
 const app = express();
 const colors = require("colors");
 const connectDB = require("./config/db");
+const uploadRoutes = require("./routes/uploadRoutes");
+const fileUpload = require("express-fileupload");
 
 connectDB();
 app.use(express.json());
+app.use(fileUpload());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/books", require("./routes/booksRoutes"));
+app.use("/api/uploads", uploadRoutes);
 
 app.use(errorHandler);
 
