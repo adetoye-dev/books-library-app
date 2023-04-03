@@ -9,13 +9,14 @@ import Paper from "@mui/material/Paper";
 
 export default function BookCard() {
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ width: 280 }}>
       <Paper
         sx={{
           width: "100%",
           height: "auto",
           paddingBlock: 3,
           paddingInline: 5,
+          backgroundColor: "#f3f3f3",
         }}
         variant="outlined"
       >
