@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Book = require("../models/bookModel");
+const { uploadBook, uploadCover } = require("./uploadController.js");
 
 // @description Get books
 // @route GET /api/books
@@ -41,6 +42,10 @@ const addBook = asyncHandler(async (req, res) => {
   ) {
     return res.status(422).json({ message: "Invalid Inputs" });
   }
+
+  //Use this format when sending data to the upload handlers
+  // const imageUrl = await uploadCover(req.files.cover.data);
+
   let book;
 
   try {
