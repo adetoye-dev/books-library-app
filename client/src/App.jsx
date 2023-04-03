@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import PdfPreview from "./components/pdfPreview";
 import { useState } from "react";
+import data from "../data.json";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ function App() {
             spacing={{ xs: 3, md: 5 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {Array.from(Array(6)).map((_, index) => (
+            {data.map((book, index) => (
               <Grid
                 item
                 xs={12}
@@ -46,7 +47,10 @@ function App() {
                 sx={{ display: "flex", justifyContent: "center" }}
               >
                 <BookCard
-                  link="https://arxiv.org/pdf/quant-ph/0410100.pdf"
+                  link={book.link}
+                  author={book.author}
+                  cover={book.imageUrl}
+                  title={book.title}
                   handlePreview={handlePreview}
                 />
               </Grid>

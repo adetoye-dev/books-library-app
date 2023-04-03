@@ -8,7 +8,13 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import handleDownload from "../util/fileDownload";
 
-export default function BookCard({ handlePreview, link }) {
+export default function BookCard({
+  handlePreview,
+  title,
+  author,
+  cover,
+  link,
+}) {
   return (
     <Card sx={{ width: 280 }}>
       <Paper
@@ -24,23 +30,23 @@ export default function BookCard({ handlePreview, link }) {
         <CardMedia
           component="img"
           height="194"
-          image="https://bit.ly/3IsYwty"
+          image={cover}
           alt="Book Cover"
         />
       </Paper>
       <CardContent>
         <Typography variant="h6" component="div" gutterBottom>
-          Book Title
+          {title}
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary">
-          Author
+          {author}
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-around" }}>
         <Button size="small" onClick={() => handlePreview(link)}>
           Preview
         </Button>
-        <Button size="small" onClick={() => handleDownload(link, "Book Title")}>
+        <Button size="small" onClick={() => handleDownload(link, title)}>
           Download
         </Button>
       </CardActions>
