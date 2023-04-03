@@ -6,8 +6,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import handleDownload from "../util/fileDownload";
 
-export default function BookCard() {
+export default function BookCard({ handlePreview, link }) {
   return (
     <Card sx={{ width: 280 }}>
       <Paper
@@ -36,8 +37,12 @@ export default function BookCard() {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-around" }}>
-        <Button size="small">Preview</Button>
-        <Button size="small">Download</Button>
+        <Button size="small" onClick={() => handlePreview(link)}>
+          Preview
+        </Button>
+        <Button size="small" onClick={() => handleDownload(link, "Book Title")}>
+          Download
+        </Button>
       </CardActions>
     </Card>
   );
