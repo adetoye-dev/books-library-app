@@ -8,7 +8,10 @@ import Button from "@mui/material/Button";
 export default function NavBar() {
   return (
     <Box>
-      <AppBar position="sticky">
+      <AppBar
+        position="sticky"
+        sx={{ backgroundColor: "#fff", color: "rgba(0, 212, 255, 1)" }}
+      >
         <Toolbar sx={{ display: "flex" }}>
           <Typography
             variant="h6"
