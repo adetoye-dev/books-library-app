@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import PdfPreview from "./components/pdfPreview";
 import { useState } from "react";
+import Hero from "./components/Hero";
 import data from "../data.json";
 
 function App() {
@@ -24,40 +25,42 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Hero />
       <PdfPreview
         isOpen={isOpen}
         handleClose={handlePreviewClose}
         pdfUrl={pdfUrl}
       />
-      <Container>
-        <h1>Books Library App</h1>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid
-            container
-            spacing={{ xs: 3, md: 5 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
-          >
-            {data.map((book, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={4}
-                md={3}
-                key={index}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <BookCard
-                  link={book.link}
-                  author={book.author}
-                  cover={book.imageUrl}
-                  title={book.title}
-                  handlePreview={handlePreview}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
+      <div id="books" className="books-container my-10">
+        <Container>
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid
+              container
+              spacing={{ xs: 3, md: 5 }}
+              columns={{ xs: 4, sm: 8, md: 12 }}
+            >
+              {data.map((book, index) => (
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  md={3}
+                  key={index}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <BookCard
+                    link={book.link}
+                    author={book.author}
+                    cover={book.imageUrl}
+                    title={book.title}
+                    handlePreview={handlePreview}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </div>
     </div>
   );
 }
