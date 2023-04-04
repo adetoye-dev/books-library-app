@@ -30,22 +30,25 @@ const getBooks = asyncHandler(async (req, res) => {
 // @access Private
 const addBook = asyncHandler(async (req, res) => {
   const { title, author, featured } = req.body;
+  const bookData = req.files.book.data;
+  const coverData = req.files.cover.data;
+
   if (
     !title &&
     title.trim() === "" &&
     !author &&
     author.trim() === "" &&
-    !bookUrl &&
-    bookUrl.trim() === "" &&
-    !imageUrl &&
-    imageUrl.trim() === ""
+    !bookData &&
+    bookData.trim() === "" &&
+    !coverData &&
+    coverData.trim() === ""
   ) {
     return res.status(422).json({ message: "Invalid Inputs" });
   }
 
-  //Use this format when sending data to the upload handlers
-  const bookUrl = await uploadBook(req.files.book);
-  const imageUrl = await uploadCover(req.files.cover);
+  //Upload Book and Cover data to fileStack
+  const bookUrl = await uploadBook(bookData);
+  const imageUrl = await uploadCover(coverData);
 
   let book;
 
