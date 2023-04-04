@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Book 1",
+    "author": "Book 1 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  },
+  {
+    "title": "Book 2",
+    "author": "Book 2 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  },
+  {
+    "title": "Book 3",
+    "author": "Book 3 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  },
+  {
+    "title": "Book 4",
+    "author": "Book 4 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  },
+  {
+    "title": "Book 5",
+    "author": "Book 5 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  },
+  {
+    "title": "Book 6",
+    "author": "Book 6 Author",
+    "imageUrl": "https://bit.ly/3IsYwty",
+    "link": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+  }
+]
