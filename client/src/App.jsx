@@ -8,6 +8,8 @@ import PdfPreview from "./components/pdfPreview";
 import { useState } from "react";
 import Hero from "./components/Hero";
 import data from "../data.json";
+import { useQuery } from "@tanstack/react-query";
+import server from "./apis/server";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +23,13 @@ function App() {
   const handlePreviewClose = () => {
     setIsOpen(false);
   };
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["books"],
+    queryFn: async () => {
+      return server.get("/books").then((res) => res.data);
+    },
+  });
 
   return (
     <div className="App">
@@ -39,24 +48,28 @@ function App() {
               spacing={{ xs: 3, md: 5 }}
               columns={{ xs: 4, sm: 8, md: 12 }}
             >
-              {data.map((book, index) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={4}
-                  md={3}
-                  key={index}
-                  sx={{ display: "flex", justifyContent: "center" }}
-                >
-                  <BookCard
-                    link={book.link}
-                    author={book.author}
-                    cover={book.imageUrl}
-                    title={book.title}
-                    handlePreview={handlePreview}
-                  />
-                </Grid>
-              ))}
+              {isLoading
+                ? "Fetching Books..."
+                : error
+                ? "Unable to fetch books!"
+                : data.map((book, index) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={4}
+                      md={3}
+                      key={index}
+                      sx={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <BookCard
+                        link={book.bookUrl}
+                        author={book.author}
+                        cover={book.imageUrl}
+                        title={book.title}
+                        handlePreview={handlePreview}
+                      />
+                    </Grid>
+                  ))}
             </Grid>
           </Box>
         </Container>
