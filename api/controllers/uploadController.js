@@ -18,7 +18,6 @@ const uploadBook = async (bookData) => {
         }
       )
       .then((res) => res.data);
-    console.log(data);
     return data.url;
   } catch (err) {
     res.json(err);
@@ -27,7 +26,6 @@ const uploadBook = async (bookData) => {
 
 //Upload book cover
 const uploadCover = async (imgData) => {
-  console.log(imgData);
   try {
     const data = await axios
       .post(
@@ -41,7 +39,6 @@ const uploadCover = async (imgData) => {
         }
       )
       .then((res) => res.data);
-    console.log(data);
     return data.url;
   } catch (err) {
     res.json(err);
