@@ -29,14 +29,14 @@ const getBooks = asyncHandler(async (req, res) => {
 // @route POST /api/books
 // @access Private
 const addBook = asyncHandler(async (req, res) => {
-  const { title, author, price, imageUrl, featured } = req.body;
+  const { title, author, featured } = req.body;
   if (
     !title &&
     title.trim() === "" &&
     !author &&
     author.trim() === "" &&
-    !price &&
-    price.trim() === "" &&
+    !bookUrl &&
+    bookUrl.trim() === "" &&
     !imageUrl &&
     imageUrl.trim() === ""
   ) {
@@ -44,12 +44,13 @@ const addBook = asyncHandler(async (req, res) => {
   }
 
   //Use this format when sending data to the upload handlers
-  // const imageUrl = await uploadCover(req.files.cover.data);
+  const bookUrl = await uploadBook(req.files.book);
+  const imageUrl = await uploadCover(req.files.cover);
 
   let book;
 
   try {
-    book = new Book({ title, author, price, imageUrl, featured });
+    book = new Book({ title, author, bookUrl, imageUrl, featured });
     book = await book.save();
   } catch (error) {
     return new Error(error);
@@ -66,7 +67,7 @@ const addBook = asyncHandler(async (req, res) => {
 // @route  PUT /api/books/:id
 // @access Private
 const updateBook = asyncHandler(async (req, res) => {
-  const { title, author, price, imageUrl, featured } = req.body;
+  const { title, author, bookUrl, imageUrl, featured } = req.body;
   if (
     !title &&
     title.trim() === "" &&
@@ -87,7 +88,7 @@ const updateBook = asyncHandler(async (req, res) => {
       {
         title,
         author,
-        price,
+        bookUrl,
         imageUrl,
         featured,
       },
