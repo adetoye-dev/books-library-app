@@ -27,7 +27,7 @@ function App() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["books"],
     queryFn: async () => {
-      return server.get("/books").then((res) => res.data);
+      return server.get("/books").then((res) => res.data.reverse());
     },
   });
 
@@ -52,7 +52,7 @@ function App() {
                 ? "Fetching Books..."
                 : error
                 ? "Unable to fetch books!"
-                : data.map((book, index) => (
+                : data.reverse().map((book, index) => (
                     <Grid
                       item
                       xs={12}
