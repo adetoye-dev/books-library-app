@@ -52,7 +52,7 @@ function App() {
                 ? "Fetching Books..."
                 : error
                 ? "Unable to fetch books!"
-                : data.reverse().map((book, index) => (
+                : data.map((book, index) => (
                     <Grid
                       item
                       xs={12}
