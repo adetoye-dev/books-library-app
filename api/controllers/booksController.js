@@ -25,6 +25,7 @@ const getBooks = asyncHandler(async (req, res) => {
   return res.status(200).json(books);
 });
 
+
 // @description Set book
 // @route POST /api/books
 // @access Private
@@ -76,8 +77,8 @@ const updateBook = asyncHandler(async (req, res) => {
     title.trim() === "" &&
     !author &&
     author.trim() === "" &&
-    !price &&
-    price.trim() === "" &&
+    !bookUrl &&
+    bookUrl.trim() === "" &&
     !imageUrl &&
     imageUrl.trim() === ""
   ) {
