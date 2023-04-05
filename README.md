@@ -18,6 +18,15 @@ An E-book library to explore interesting and resourceful tech related contents.
 
 ## Running This Locally
 
+*From repo:*
+
+1 Clone this project locally
+
+2 Run `npm install` in your bash/command line
+
+3 Rub `npm run dev` in your bash/command line
+
+4 Happy viewing!
 
 
 
