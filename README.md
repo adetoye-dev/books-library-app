@@ -4,7 +4,7 @@
 
 An E-book library to explore interesting and resourceful tech related contents.
 
-**VISIT WEBSITE** [HERE](https://tech-reads.vercel.app/)
+VISIT WEBSITE [HERE](https://tech-reads.vercel.app/)
 
 ## Features
 ### MVP 
@@ -28,5 +28,7 @@ An E-book library to explore interesting and resourceful tech related contents.
 
 4 Happy viewing!
 
+## Contributors
+[Adetoye](https://github.com/adetoye-dev)
 
-
+[Remi Daniel](https://github.com/Remi-dee)
