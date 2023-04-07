@@ -24,7 +24,7 @@ VISIT WEBSITE [HERE](https://tech-reads.vercel.app/)
 
 2 Run `npm install` in your bash/command line
 
-3 Rub `npm run dev` in your bash/command line
+3 Run `npm run dev` in your bash/command line
 
 4 Happy viewing!
 
