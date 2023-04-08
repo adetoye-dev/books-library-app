@@ -48,28 +48,38 @@ function App() {
               spacing={{ xs: 3, md: 5 }}
               columns={{ xs: 4, sm: 8, md: 12 }}
             >
-              {isLoading
-                ? "Fetching Books..."
-                : error
-                ? "Unable to fetch books!"
-                : data.reverse().map((book, index) => (
-                    <Grid
-                      item
-                      xs={12}
-                      sm={4}
-                      md={3}
-                      key={index}
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <BookCard
-                        link={book.bookUrl}
-                        author={book.author}
-                        cover={book.imageUrl}
-                        title={book.title}
-                        handlePreview={handlePreview}
-                      />
-                    </Grid>
-                  ))}
+              {isLoading ? (
+                <div className="w-full h-full flex flex-col items-center justify-center py-10 gap-5">
+                  <span className="w-8 h-8 border border-4 border-slate-300 shadow-sm rounded animate-spin"></span>
+                  <p className="animate-pulse text-lg">Fetching Books...</p>
+                </div>
+              ) : error ? (
+                <div className="w-full h-full flex flex-col items-center justify-center py-10">
+                  <p className="text-center text-lg">
+                    Unable to fetch books. <br />
+                    Please Check your network and try again!
+                  </p>
+                </div>
+              ) : (
+                data.map((book, index) => (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={4}
+                    md={3}
+                    key={index}
+                    sx={{ display: "flex", justifyContent: "center" }}
+                  >
+                    <BookCard
+                      link={book.bookUrl}
+                      author={book.author}
+                      cover={book.imageUrl}
+                      title={book.title}
+                      handlePreview={handlePreview}
+                    />
+                  </Grid>
+                ))
+              )}
             </Grid>
           </Box>
         </Container>
