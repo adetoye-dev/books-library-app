@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/books", require("./routes/booksRoutes"));
+app.use("/api/books", require("./routes/booksRoutes.js"));
 
 app.use(errorHandler);
 
