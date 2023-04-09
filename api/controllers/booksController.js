@@ -36,13 +36,13 @@ const addBook = asyncHandler(async (req, res) => {
   const coverData = req.files.cover.data;
 
   if (
-    !title &&
-    title.trim() === "" &&
-    !author &&
-    author.trim() === "" &&
-    !bookData &&
-    bookData.trim() === "" &&
-    !coverData &&
+    !title ||
+    title.trim() === "" ||
+    !author ||
+    author.trim() === "" ||
+    !bookData ||
+    bookData.trim() === "" ||
+    !coverData ||
     coverData.trim() === ""
   ) {
     return res.status(422).json({ message: "Invalid Inputs" });
@@ -91,13 +91,13 @@ const addBook = asyncHandler(async (req, res) => {
 const updateBook = asyncHandler(async (req, res) => {
   const { title, author, bookUrl, imageUrl, featured } = req.body;
   if (
-    !title &&
-    title.trim() === "" &&
-    !author &&
-    author.trim() === "" &&
-    !bookUrl &&
-    bookUrl.trim() === "" &&
-    !imageUrl &&
+    !title ||
+    title.trim() === "" ||
+    !author ||
+    author.trim() === "" ||
+    !bookUrl ||
+    bookUrl.trim() === "" ||
+    !imageUrl ||
     imageUrl.trim() === ""
   ) {
     return res.status(422).json({ message: "Invalid Inputs" });
