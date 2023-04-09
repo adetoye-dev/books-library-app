@@ -7,7 +7,7 @@ const {
   deleteBook,
   addBook,
   updateBook,
-} = require("../controllers/booksController");
+} = require("../controllers/booksController.js");
 
 router.route("/").get(getBooks).post(addBook);
 router.route("/:id").put(updateBook).delete(deleteBook).get(getBookById);
