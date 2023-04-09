@@ -48,12 +48,23 @@ const addBook = asyncHandler(async (req, res) => {
     return res.status(422).json({ message: "Invalid Inputs" });
   }
 
- // Check if the book file is a PDF file
- const buffer = bookData.slice(0, 4); // Read the first 4 bytes
- const header = buffer.toString('hex');
- if (header !== '25504446') { // PDF file signature
-   return res.status(422).json({ message: "The uploaded file is not a PDF" });
- }
+  // Check if the book file is a PDF file
+
+  const header = bookData.toString("hex", 0, 4); // Convert the first 4 bytes to Hexadecimal string
+  const pdfHeader = "25504446"; // PDF file signature
+  if (header !== pdfHeader) {
+    return res.status(422).json({ message: "The uploaded file is not a PDF" });
+  }
+
+  // Check if coverData is a JPEG or PNG image
+  const jpegHeader = "ffd8ffe0";
+  const pngHeader = "89504e47";
+  const headerCheck = coverData.toString("hex", 0, 4);
+  if (headerCheck !== jpegHeader && headerCheck !== pngHeader) {
+    return res
+      .status(422)
+      .json({ message: "The uploaded file is not a JPEG or PNG image" });
+  }
 
   //Upload Book and Cover data to fileStack
   const bookUrl = await uploadBook(bookData);
