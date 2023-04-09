@@ -52,7 +52,7 @@ export default function PdfPreview({ isOpen, handleClose, pdfUrl }) {
         {data ? (
           // <iframe src={data} width="100%" height="100%" />
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-            <Viewer fileUrl={data} />;
+            <Viewer fileUrl={data} />
           </Worker>
         ) : (
           <p>Loading Book Preview...</p>
