@@ -49,7 +49,6 @@ const addBook = asyncHandler(async (req, res) => {
   }
 
   // Check if the book file is a PDF file
-
   const header = bookData.toString("hex", 0, 4); // Convert the first 4 bytes to Hexadecimal string
   const pdfHeader = "25504446"; // PDF file signature
   if (header !== pdfHeader) {
@@ -57,9 +56,9 @@ const addBook = asyncHandler(async (req, res) => {
   }
 
   // Check if coverData is a JPEG or PNG image
-  const jpegHeader = "ffd8ffe0";
-  const pngHeader = "89504e47";
-  const headerCheck = coverData.toString("hex", 0, 4);
+  const jpegHeader = "ffd8ffe0"; // JPEG file signature
+  const pngHeader = "89504e47"; // PNG file signature
+  const headerCheck = coverData.toString("hex", 0, 4); // Convert the first 4 bytes to Hexadecimal string
   if (headerCheck !== jpegHeader && headerCheck !== pngHeader) {
     return res
       .status(422)
