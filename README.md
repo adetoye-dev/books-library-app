@@ -2,7 +2,7 @@
 
 ## Overview
 
-An E-book library to explore interesting and resourceful tech related contents. This E-Book Library App allows users to view, search and download tech related books,  from the library. The app is built using a Node.js backend with a MongoDB database and a React frontend.
+An E-book library to explore interesting and resourceful tech related contents. This E-Book Library App allows users to view, search and download tech related books,  from the library. The app is built using a Node.js backend with a MongoDB database and a React frontend framework.
 
 VISIT APP [HERE](https://tech-reads.vercel.app/)
 
@@ -40,6 +40,9 @@ The E-Book Library App uses the following technologies:
 4. Mongoose - Object data modeling library for MongoDB.
 
 5. React Vite - Frontend framework.
+6. Material UI - UI component library
+
+These technologies work together to provide a scalable, efficient, and maintainable architecture for the Book Library App. Node.js and Express handle the server-side logic and API, while MongoDB and Mongoose provide a robust and scalable database solution. React and Material UI handle the frontend design, logic, and functionalities, making it easy to build a rich, interactive user interface.
 
 - Node.js: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is used for building scalable network applications and is particularly well-suited for building server-side web applications.
 Get started with node [here](https://nodejs.org/en/docs/guides/getting-started-guide)
@@ -52,6 +55,9 @@ Get started with node [here](https://nodejs.org/en/docs/guides/getting-started-g
 Read official docs [here](https://mongoosejs.com/docs/)
 
 - React Vite: Vite is a modern build tool and framework that optimizes the frontend development experience. It offers features such as fast builds, hot module replacement, and automatic code splitting, which help developers to build high-performance and efficient React applications. The official documentation for React Vite can be found [here](https://vitejs.dev/guide/).
+
+- Material-UI is a popular React UI framework that provides a collection of customizable and reusable UI components for building modern web applications. It follows Google's Material Design guidelines and offers a sleek and intuitive user interface design. With Material-UI, developers can easily create responsive, accessible, and mobile-first applications with minimal effort. It provides a wide range of pre-built components, such as buttons, forms, navigation menus, and data tables, that can be easily customized to fit any design requirements.Read through the official documentation of Material-UI:[Click here](https://mui.com/getting-started/).This documentation provides comprehensive guides on how to install and use the framework, including examples and demos of all the available components and features.
+
 
 
 ## API Endpoints
@@ -67,9 +73,11 @@ Read official docs [here](https://mongoosejs.com/docs/)
 
 
 ## Conclusion
-The book library app provides users with the ability to preview and download books from a digital library. While users cannot delete books from the library, they can easily access a variety of titles for their reading pleasure. The app is built using a React Vite frontend and a Node.js backend, with data stored in a MongoDB database. The frontend allows users to search for books, view book details, and download books in pdf format. The backend includes endpoints for retrieving book data. To run the app locally, simply clone the repository and follow the instructions in the README. With its user-friendly interface and extensive collection of books, the book library app is a great resource for book lovers everywhere.
+The E-book library app provides users with the ability to preview and download books from a digital library. While users cannot delete books from the library, they can easily access a variety of titles for their reading pleasure. The app is built using a React Vite frontend and a Node.js backend, with data stored in a MongoDB database. The frontend allows users to search for books, view book details, and download books in pdf format. The backend includes endpoints for retrieving book data. To run the app locally, simply clone the repository and follow the instructions in the README. With its user-friendly interface and extensive collection of books, the book library app is a great resource for book lovers everywhere.
 
+## License
 
+The E-Book Library App is licensed under the MIT License.
 
 
 ## Contributors
