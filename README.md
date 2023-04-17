@@ -27,7 +27,7 @@ VISIT APP [HERE](https://tech-reads.vercel.app/)
 in your web browser to access the app.
 5. Happy viewing!
 
-## Technologies Used
+## Technology Stack
 
 The E-Book Library App uses the following technologies:
 
@@ -36,6 +36,16 @@ The E-Book Library App uses the following technologies:
 3. MongoDB - NoSQL database
 4. Mongoose - Object data modeling library for MongoDB
 5. React Vite - Frontend framework
+
+1. Node.js: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is used for building scalable network applications and is particularly well-suited for building server-side web applications.
+Get started with node [here](https://nodejs.org/en/docs/guides/getting-started-guide)
+2. Express: Express is a fast and lightweight web application framework for Node.js. It provides a robust set of features for building web and mobile applications.
+
+3. MongoDB: MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. It is particularly well-suited for use with Node.js and offers great scalability and performance.
+
+5. Mongoose: Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a higher level of abstraction than the MongoDB driver, making it easier to work with MongoDB data in Node.js.
+
+6. React: React is a popular JavaScript library for building user interfaces. It allows developers to build reusable UI components and provides a declarative programming model for building UIs.
 
 
 ## API Endpoints
