@@ -37,16 +37,18 @@ The E-Book Library App uses the following technologies:
 4. Mongoose - Object data modeling library for MongoDB
 5. React Vite - Frontend framework
 
+
 1. Node.js: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is used for building scalable network applications and is particularly well-suited for building server-side web applications.
 Get started with node [here](https://nodejs.org/en/docs/guides/getting-started-guide)
 
-2. Express: Express is a fast and lightweight web application framework for Node.js. It provides a robust set of features for building web and mobile applications.Learn expressjs, write your first "Hello World" script express [here](https://expressjs.com/en/starter/hello-world.html)
+2. Express: Express is a fast and lightweight web application framework for Node.js. It provides a robust set of features for building web and mobile applications.Learn expressjs, write your first "Hello World" script with express [here](https://expressjs.com/en/starter/hello-world.html)
 
-3. MongoDB: MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. It is particularly well-suited for use with Node.js and offers great scalability and performance.[Learn more](https://docs.mongodb.com/)
+3. MongoDB: MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. It is particularly well-suited for use with Node.js and offers great scalability and performance [Learn more](https://docs.mongodb.com/).
 
 5. Mongoose: Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a higher level of abstraction than the MongoDB driver, making it easier to work with MongoDB data in Node.js.
+Read official docs [here](https://mongoosejs.com/docs/)
 
-6. React: React is a popular JavaScript library for building user interfaces. It allows developers to build reusable UI components and provides a declarative programming model for building UIs.
+6. React Vite: Vite is a modern build tool and framework that optimizes the frontend development experience. It offers features such as fast builds, hot module replacement, and automatic code splitting, which help developers to build high-performance and efficient React applications. The official documentation for React Vite can be found [here](https://vitejs.dev/guide/).
 
 
 ## API Endpoints
